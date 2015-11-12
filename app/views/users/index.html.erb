@@ -1,6 +1,7 @@
   <div class="jumbotron text-center">
-  <%= button_to "Log-in", method: :post, class: 'btn btn-danger' %>
-  <%= button_to "Log-out", method: :post, class: 'btn btn-danger' %>
+  <%= button_to "Create User", new_user_path, :class => "btn btn-danger pull-right", :method => :get %>
+  
+  <%= button_to "Login", new_user_path, :class => 'btn btn-primary pull-right', :method => :get %>
   <!-- fix pull right later -->
     <div class="container">
       <h1>Vagabond App</h1>
