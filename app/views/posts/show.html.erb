@@ -42,7 +42,10 @@
 			<%= @post[:body] %>
 		</div>
 	</div>
-	<button>Edit</button><button>Delete</button>
+   <%= button_to "Delete", post_path, :class => "btn btn-danger pull-right", :method => :delete %>
+
+   <%= button_to "Edit", edit_post_path, :class => "btn btn-success pull-right", :method => :get %>
+ 
 	<div class="row text_body_space">
 		<p>Comments will go here</p>
 	</div>
