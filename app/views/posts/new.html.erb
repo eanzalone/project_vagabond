@@ -1,1 +1,10 @@
 New Post page
+<%= form_for @post, method:"post" do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: "Post Title" %>
+  </div>
+  <div>
+    <%= f.text_field :body, placeholder: "Post Body" %>
+  </div>
+  <%= f.submit "Make Post" %>
+<% end %> 
