@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create", as: 'sessions'  
 
-
-  resources :posts
+  resources :user do
+  	resources :posts
+  end
 end
