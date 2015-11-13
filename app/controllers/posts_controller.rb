@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 		@post.update(location_id: @location.id)
 		# post = Post.create(post_params)
 		if @post.save
-			redirect_to post_path(:id)
+			redirect_to post_path(@post[:id])
 		end
 	end
 	def show
