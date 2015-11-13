@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
   get '/posts', to: 'posts#index', as: 'posts' 
 
-  resources :users do
-    resources :posts
-  end
+  resources :users
+  resources :posts
 end
