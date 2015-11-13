@@ -9,15 +9,16 @@ class PostsController < ApplicationController
 	def create
 		# user = User.find(session[:user_id])
 
-		post_params = params.require(:post).permit(:title, :body, :address)
+		post_params = params.require(:post).permit(:title, :body)
+		@location = Location.where(name: params[:post][:location]).first
 		@post = current_user.posts.new(post_params)
-		p "This is the post: #{params[:post]}"
-		p params
-		post = Post.create(post_params)
+		@post.update(location_id: @location.id)
+		# post = Post.create(post_params)
 		if @post.save
-			redirect_to new_post_path(user) #Needs fix
+			redirect_to post_path(:id)
 		end
 	end
 	def show
+		@post = Post.find(params[:id])
 	end
 end
