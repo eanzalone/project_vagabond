@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get "/users/:id", to: "users#show", as: "user"
 
   get "/login", to: "sessions#new", as: "login"
+  get "/logout", to: "sessions#destroy", as: "logout"
 
   post "/sessions", to: "sessions#create", as: 'sessions'  
 
-  resources :user do
-  	resources :posts
-  end
+
+  resources :posts
 end
