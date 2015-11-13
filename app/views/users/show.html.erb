@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= @user[:first_name] %><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= @user[:first_name] %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Profile", user_path(@user) %></li>
             <li role="separator" class="divider"></li>
@@ -46,6 +46,7 @@
 			</div>
 			<p></p> <!-- padding -->
 			<p>Bio</p>
+      <p><strong>Join Date: </strong><small>get data from user create</small></p>
 		</div>
 		<div id="profile-data" class="col-sm-offset-1 col-sm-6">
 			<h3>Posts</h3>
@@ -61,7 +62,7 @@
 	#profile-info {
 		text-align: center;
 	    outline: navy solid;
-	    padding-bottom: 180px;
+	    padding-bottom: 150px;
 	}
 	#profile-data {
 	    outline: navy solid;

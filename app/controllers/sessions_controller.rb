@@ -1,17 +1,28 @@
 class SessionsController < ApplicationController
-	def new
-		@user = User.new
-		render :new
-	end
+ 
+  # show the login form
+  def new
+    # TODO: render a login form view
+  end
 
-	def create
-    user_params = params.require(:user).permit(:email, :password)
-    @user = User.confirm(user_params)
-    if @user
-      login(@user)
-      redirect_to @user
+  # create the session, logging in the user
+  def create
+    user = User.confirm(params[:email], params[:password])
+    if user
+      # save the user's id into the session
+      session[:user_id] = user.id
+      #redirect to the show page
+      redirect_to user_path(user.id)
     else
-      redirect_to new_session_path
+      #there was an error logging the user in
+      redirect_to login_path
     end
   end
+  
+  # logout the current user
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
+  end
+
 end
