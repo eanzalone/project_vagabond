@@ -26,6 +26,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
@@ -34,7 +35,7 @@
 		</div>
 		<div class="col-sm-9">
 			<h2><%= @post[:title] %></h2>
-			<h4><%= @post[:location_id] %> <em>at</em> <%= @post[:created_at] %></h4>
+			<h4><%= @location[:name] %> <em>at</em> <%= @post.created_at.strftime("%d %b %Y") %> <%= @post.created_at.strftime("%H:%M") %></h4>
 		</div>
 	</div>
 	<div class="row text_body_space">
