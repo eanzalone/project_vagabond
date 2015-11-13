@@ -12,5 +12,22 @@ Sign Up
   <div>
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
+  <div>
+    <%= f.text_field :neighborhood, placeholder: "neighborhood" %>
+  </div>
   <%= f.submit "Sign Up" %>
 <% end %> 
+
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Neighborhood
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Soma</a></li>
+    <li><a href="#">Mission</a></li>
+    <li><a href="#">Tenderloin</a></li>
+    <li><a href="#">Sunset</a></li>
+  </ul>
+</div>
