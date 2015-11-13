@@ -28,8 +28,9 @@
 <div class="container">
 	<div class="row">
 		<div id="profile-info" class="col-sm-3">
-			<h3>Username</h3>
+			<h3><%= @user[:first_name] %><%= @user[:last_name] %></h3>
 			<img src="http://placehold.it/200x200" alt="profile photo">
+			<%=link_to "Edit profile", edit_user_path, class:"btn btn-primary" %> 	
 			<p></p> <!-- padding -->
 			<p><strong>Home Base: </strong>SoMa</p>
 			<p><strong>Favorite Topic: </strong><small>(generated from which subject tag is in most of their posts)</small></p>
