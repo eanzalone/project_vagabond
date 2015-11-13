@@ -7,12 +7,16 @@ class PostsController < ApplicationController
 		render :new
 	end
 	def create
+		user = User.find(params[:user_id])
 		post_params = params.require(:post).permit(:title, :body)
 		p "This is the post: #{params[:post]}"
 		p params
-		Post.create(post_params)
-		current_user << @post
-		redirect_to '/users/1' #Needs fix
+		post = Post.create(post_params)
+		if post.save
+			user.posts << post
+		# current_user << @post
+		redirect_to user_path(user) #Needs fix
+		end
 	end
 	def show
 	end
