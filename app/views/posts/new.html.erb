@@ -24,7 +24,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<%= form_for ([current_user, @post]) do |f| %>
+<%= form_for @post do |f| %>
   <div>
     <%= f.text_field :title, placeholder: "Post Title" %>
   </div>
