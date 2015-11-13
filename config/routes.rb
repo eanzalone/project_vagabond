@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create", as: 'sessions'  
 
 
+  resources :posts
 end
