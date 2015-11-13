@@ -3,5 +3,30 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+locations = [
+'Bernal Heights',
+'Castro',
+'Chinatown',
+'Dogpatch',
+'Embarcadero',
+'Excelsior',
+'Financial District',
+'Glen Park',
+'Haight',
+'Hayes Valley',
+'Marina',
+'Mission',
+'Mission Bay',
+'Nob Hill',
+'Noe Valley',
+'North Beach',
+'Pacific Heights',
+'Potrero Hill',
+'Richmond',
+'Russian Hill',
+'Tenderloin'
+]
+
+locations.each do |name|
+	Location.create(name: name)
+end

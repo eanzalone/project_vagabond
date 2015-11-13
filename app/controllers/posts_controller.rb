@@ -7,17 +7,19 @@ class PostsController < ApplicationController
 		render :new
 	end
 	def create
-		user = User.find(params[:user_id])
-		post_params = params.require(:post).permit(:title, :body, :address)
-		p "This is the post: #{params[:post]}"
-		p params
-		post = Post.create(post_params)
-		if post.save
-			user.posts << post
-		# current_user << @post
-		redirect_to user_path(user) #Needs fix
+		# user = User.find(session[:user_id])
+
+		post_params = params.require(:post).permit(:title, :body)
+		@location = Location.where(name: params[:post][:location]).first
+		@post = current_user.posts.new(post_params)
+		@post.update(location_id: @location.id)
+		# post = Post.create(post_params)
+		if @post.save
+			redirect_to post_path(@post[:id])
 		end
 	end
 	def show
+		@post = Post.find(params[:id])
+		@location = Location.find(params[:id])
 	end
 end

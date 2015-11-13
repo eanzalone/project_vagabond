@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			<img src="http://placehold.it/200x200" alt="profile photo"></br>
+			<small><%= current_user[:first_name]%></small>
+		</div>
+		<div class="col-sm-9">
+			<h2><%= @post[:title] %></h2>
+			<h4><%= @location[:name] %> <em>at</em> <%= @post.created_at.strftime("%d %b %Y") %> <%= @post.created_at.strftime("%H:%M") %></h4>
+		</div>
+	</div>
+	<div class="row text_body_space">
+		<div class="col-sm-offset-2 col-sm-8">
+			<%= @post[:body] %>
+		</div>
+	</div>
+	<button>Edit</button><button>Delete</button>
+	<div class="row text_body_space">
+		<p>Comments will go here</p>
+	</div>
+</div>
+<style>
+	.text_body_space {
+	    outline: navy solid;
+	    padding-bottom: 300px;
+</style>

@@ -1,11 +1,46 @@
+<<<<<<< HEAD
 
 
 <%= form_for ([current_user, @post]) do |f| %>
+=======
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user[:first_name] %> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="col-sm-offset-3">
+<%= form_for @post do |f| %>
+>>>>>>> 0a2bf2bb694af7c07af91c7191d8dba8297e74e7
   <div>
     <%= f.text_field :title, placeholder: "Post Title" %>
   </div>
   <div>
     <%= f.text_field :body, placeholder: "Post Body" %>
   </div>
-  <%= f.submit "Make Post" %>
+  <div>
+    <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
+  </div>
+  <%= f.submit "Make Post!" %>
 <% end %> 
+</div>
