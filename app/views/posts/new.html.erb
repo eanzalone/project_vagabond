@@ -24,6 +24,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div class="col-sm-offset-3">
 <%= form_for @post do |f| %>
   <div>
     <%= f.text_field :title, placeholder: "Post Title" %>
@@ -31,5 +32,9 @@
   <div>
     <%= f.text_field :body, placeholder: "Post Body" %>
   </div>
+  <div>
+    <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
+  </div>
   <%= f.submit "Make Post" %>
 <% end %> 
+</div>
