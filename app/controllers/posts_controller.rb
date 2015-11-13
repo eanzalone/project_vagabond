@@ -20,6 +20,6 @@ class PostsController < ApplicationController
 	end
 	def show
 		@post = Post.find(params[:id])
-		@location = Location.where(name: params[:post][:location]).first
+		@location = Location.find(params[:id])
 	end
 end
