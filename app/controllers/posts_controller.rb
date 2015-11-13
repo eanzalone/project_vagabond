@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 	end
 	def create
 		user = User.find(params[:user_id])
-		post_params = params.require(:post).permit(:title, :body)
+		post_params = params.require(:post).permit(:title, :body, :address)
 		p "This is the post: #{params[:post]}"
 		p params
 		post = Post.create(post_params)

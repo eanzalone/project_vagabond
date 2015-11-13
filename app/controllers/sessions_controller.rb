@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       # save the user's id into the session
       session[:user_id] = user.id
       #redirect to the show page
-      redirect_to user_path(user.id)
+      redirect_to posts_path
     else
       #there was an error logging the user in
       redirect_to login_path
