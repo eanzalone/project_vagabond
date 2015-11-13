@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get "/sign_in", to: "sessions#new", as: 'new_session'
   post "/sessions", to: "sessions#create", as: 'sessions' 
 
-  get "/post", to: "posts#create"
+  get "/post/new", to: "posts#new"
 end
