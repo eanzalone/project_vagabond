@@ -1,0 +1,14 @@
+<%= form_for @user do |f| %>
+	<div>
+	<p>FirstName:</p>
+		<%= f.text_field :first_name %>
+	</div>
+    <br>
+    <div>
+    <p>LastName:</p>
+    	<%= f.text_field :last_name %>
+    </div>
+    <br>
+
+    <%= f.submit "update", class:"btn btn-primary"%>
+<% end %>
