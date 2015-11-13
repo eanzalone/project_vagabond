@@ -11,7 +11,8 @@ class PostsController < ApplicationController
 		p "This is the post: #{params[:post]}"
 		p params
 		Post.create(post_params)
-		redirect_to '/users/1' #Needs fix redirect
+		current_user << @post
+		redirect_to '/users/1' #Needs fix
 	end
 	def show
 	end

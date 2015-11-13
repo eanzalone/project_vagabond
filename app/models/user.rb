@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :posts
+
  # tell bcrypt how hard to work to obscure password
   BCrypt::Engine.cost = 12
 
