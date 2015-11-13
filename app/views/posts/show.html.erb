@@ -42,7 +42,7 @@
 			<%= @post[:body] %>
 		</div>
 	</div>
-   <%= button_to "Delete", post_path, :class => "btn btn-danger pull-right", :method => :delete %>
+   <%= button_to "Delete", post_path, :class => "btn btn-danger pull-right", :method => :delete, data: { confirm: "Confirm delete please?"} %>
 
    <%= button_to "Edit", edit_post_path, :class => "btn btn-success pull-right", :method => :get %>
  
