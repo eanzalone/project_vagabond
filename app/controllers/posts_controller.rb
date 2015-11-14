@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 	end
 	def create
 		# user = User.find(session[:user_id])
-
 		post_params = params.require(:post).permit(:title, :body)
 		@location = Location.where(name: params[:post][:location]).first
 		@post = current_user.posts.new(post_params)
@@ -18,6 +17,7 @@ class PostsController < ApplicationController
 			redirect_to post_path(@post[:id])
 		end
 	end
+	
 	def show
 		@post = Post.find(params[:id])
 		@location = Location.find(params[:id])
