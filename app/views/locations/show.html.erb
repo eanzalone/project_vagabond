@@ -1,7 +1,7 @@
 <!-- Neighborhood Name Splash -->
 <div class="jumbotron text-center">
   <div class="container">
-   <h1>Neighborhood Name</h1>
+   <h1><%= @location[:name] %></h1>
   </div>
 </div>
 
@@ -11,8 +11,12 @@
 <!-- Neighborhood Navigation Area -->
 
 <div class="col-sm-12"> <!-- Post Container -->
-		
-		<div class="row">
+
+<% @posts.each do |post| %>
+  <li><%= post.title %></li>
+<% end %>
+
+<!-- 		<div class="row">
       <div class="col-md-5">
           <a href="#">
               <img class="img-responsive" src="http://placehold.it/200x200" alt="">
@@ -24,7 +28,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
           <a class="btn btn-primary" href="#">View Article <span class="glyphicon glyphicon-chevron-right"></span></a>
       </div>
-  	</div>
+  	</div> -->
 
 </div> <!--Post /.container -->
 
