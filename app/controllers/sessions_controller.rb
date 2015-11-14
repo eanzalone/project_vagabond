@@ -8,14 +8,15 @@ class SessionsController < ApplicationController
   # create the session, logging in the user
   def create
     user = User.confirm(params[:email], params[:password])
-    if user
+    if user && user.authenticate(params[:email])
       # save the user's id into the session
       session[:user_id] = user.id
       #redirect to the show page
-      redirect_to posts_path
+      redirect_to posts_path, notice: "Logged in!"
     else
       #there was an error logging the user in
-      redirect_to login_path
+      flash.now.alert = "Email or password is invalid"
+      render "new"
     end
   end
   
