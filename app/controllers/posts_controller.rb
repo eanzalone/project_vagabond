@@ -22,4 +22,24 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@location = Location.find(params[:id])
 	end
+
+	def edit 
+		id = params[:id]
+		@post = Post.find(id)
+		render :edit
+	end 
+
+	def update
+		@post = Post.find(params[:id])
+		updated_attributes = params.require(:post).permit(:title, :body)
+		@post.update_attributes(updated_attributes)
+		redirect_to @post
+	end
+
+	def destroy
+	  	id = params[:id]
+		@post = Post.find(id)
+		@post.destroy
+		redirect_to @post
+	end
 end
