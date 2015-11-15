@@ -4,8 +4,8 @@ class PostsController < ApplicationController
 	end
 	def new 
 		@post = Post.new
-		render :new
 	end
+
 	def create
 		# user = User.find(session[:user_id])
 		post_params = params.require(:post).permit(:title, :body)
@@ -14,13 +14,12 @@ class PostsController < ApplicationController
 		@post.update(location_id: @location.id)
 		# post = Post.create(post_params)
 		if @post.save
-			redirect_to post_path(@post[:id])
+			redirect_to location_path(@location[:id])
 		end
 	end
 	
 	def show
 		@post = Post.find(params[:id])
-		@location = Location.find(params[:id])
 	end
 
 	def edit 
