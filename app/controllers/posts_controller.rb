@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 	def index
 		@post = Post.new
 	end
+
 	def new 
 		@post = Post.new
 	end
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-	  	id = params[:id]
+	  id = params[:id]
 		@post = Post.find(id)
 		@post.destroy
 		redirect_to @post

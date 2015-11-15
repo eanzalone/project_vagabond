@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :auth_user?, only: :edit
+
 	def index
 		@user = User.all
 		render :index
@@ -37,5 +39,16 @@ class UsersController < ApplicationController
 		@user.update_attributes(updated_attributes)
 		redirect_to @user 
 	end
+
+	def auth_user?
+    # layout: false prevents the application layout page from loading
+    # returning false/true stops/allows the action
+    unless current_user.id == params[:id].to_i
+      render file: 'public/401.html', status: 401, layout: false
+      false
+    else
+      true
+    end
+  end
 
 end

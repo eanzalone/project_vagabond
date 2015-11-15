@@ -10,29 +10,28 @@
 
 <!-- Neighborhood Navigation Area -->
 
-<div class="col-sm-12"> <!-- Post Container -->
+  <div class="col-sm-12"> <!-- Post Container -->
 
-<% @posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post) %></li>
-<% end %>
+    <% @posts.each do |post| %>
+      <li><%= link_to post.title, post_path(post) %></li>
+    <% end %>
 
-<!-- 		<div class="row">
-      <div class="col-md-5">
-          <a href="#">
-              <img class="img-responsive" src="http://placehold.it/200x200" alt="">
-          </a>
-      </div>
-      <div class="col-md-7">
-          <h3>Article Title</h3>
-          <h5>In: Food, Activities</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-          <a class="btn btn-primary" href="#">View Article <span class="glyphicon glyphicon-chevron-right"></span></a>
-      </div>
-  	</div> -->
+    <%= link_to('Add Post', new_post_path, :class => 'btn btn-primary')  %>
 
-</div> <!--Post /.container -->
+  <!-- 		<div class="row">
+        <div class="col-md-5">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/200x200" alt="">
+            </a>
+        </div>
+        <div class="col-md-7">
+            <h3>Article Title</h3>
+            <h5>In: Food, Activities</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
+            <a class="btn btn-primary" href="#">View Article <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+    	</div> -->
 
-
-
+  </div> <!--Post /.container -->
 
 </div> <!--Page /.container -->
