@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
 
   # create the session, logging in the user
   def create
-    user = User.confirm(params[:email], params[:password])
-    if user
-      # save the user's id into the session
-      session[:user_id] = user.id
-      #redirect to the show page
-      redirect_to posts_path
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+     # save the user's id into the session
+     session[:user_id] = user.id
+     #redirect to the show page
+     redirect_to root_url
     else
       #there was an error logging the user in
-      redirect_to login_path
+      render :new 
     end
   end
   
@@ -23,8 +23,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     # flash[:notice] = "Successfully logged out."
-    redirect_to users_path
-    flash[:notice] = "Successfully logged out."
+    redirect_to root_url, notice: "Successfully logged out."
   end
 
 end

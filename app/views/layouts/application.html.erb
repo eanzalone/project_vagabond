@@ -9,9 +9,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<% if current_user.present? %> 
+	<% if current_user %> 
 		<%= render "partials/postnavbar" %> 
-	<% elsif current_user == nil %>
+	<% else %>
 	  <%= render "partials/prenavbar" %> 
 	<% end %>
 
