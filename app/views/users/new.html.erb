@@ -16,12 +16,11 @@
         <%= f.password_field :password, placeholder: "Password" %>
       </div>
       <div>
-        <%= f.select :neighborhood, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
+        <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
       </div>
         <%= f.submit "Sign Up" %>
     <% end %> 
   </div>
-<<<<<<< HEAD
 </div>
 <form class="pure-form">
     <fieldset class="pure-group">
@@ -37,22 +36,4 @@
 
     <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Sign in</button>
 </form>
-=======
- <div>
-   <%= f.text_field :first_name, placeholder: "First Name" %>
- </div>
- <div>
-   <%= f.text_field :last_name, placeholder: "Last Name" %>
- </div>
- <div>
-   <%= f.text_field :email, placeholder: "Email" %>
- </div>
- <div>
-   <%= f.password_field :password, placeholder: "Password" %>
- </div>
- <div>
-   <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
- </div>
-   <%= f.submit "Sign Up" %>
-<% end %>
->>>>>>> e9cdad44692949b983587b94697ce6bb6d955f2c
+
