@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113203322) do
+ActiveRecord::Schema.define(version: 20151116165851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "post_id"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -51,7 +58,7 @@ ActiveRecord::Schema.define(version: 20151113203322) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "neighborhood"
+    t.string   "location"
   end
 
 end
