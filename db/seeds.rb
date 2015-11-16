@@ -30,3 +30,15 @@ locations = [
 locations.each do |name|
 	Location.create(name: name)
 end
+
+tags = [
+'Food',
+'News',
+'Music',
+'Bars',
+'Nightlife'
+]
+
+tags.each do |tag|
+	ActsAsTaggableOn::Tag.new(:name => tag).save
+end

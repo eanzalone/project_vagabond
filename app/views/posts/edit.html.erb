@@ -1,14 +1,26 @@
-<%= form_for @post do |f| %>
-	<div>
-	<p>Title:</p>
-		<%= f.text_field :title %>
-	</div>
-    <br>
-    <div>
-    <p>Body:</p>
-    	<%= f.text_field :body %>
+<h1 class="form_header">Edit a Post</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <%= form_for @post do |f| %>
+            <div>
+    	       Title:</br>
+        		<%= f.text_field :title, :class => 'form-control' %>
+            </div>
+            <br>
+            <div>
+                Body:</br>
+                <%= f.text_area :body, :class => 'form-control',:id => 'edit_post_body' %>
+            </div>
+            <br>
+            <div>
+                Location:
+                <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']], :class => 'form-control'%>
+                <span class="pull-right">Tags:
+                <%= f.select :tag_list, [['Food'],['News'],['Music'],['Bars'],['Nightlife']], :class => 'form-control'%></span>
+            </div>
+            <%= f.submit "update", class:"btn btn-primary form-control"%>
+        <% end %>
     </div>
-    <br>
-
-    <%= f.submit "update", class:"btn btn-primary"%>
-<% end %>
+  </div>
+</div>
