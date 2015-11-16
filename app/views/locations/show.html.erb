@@ -1,9 +1,10 @@
 <!-- Neighborhood Name Splash -->
-<div class="jumbotron text-center">
+<div class ="jumbotron text-center" style="background: url(<%= asset_url @location[:name] %>); background-position: center; background-size: 100%">
   <div class="container">
    <h1><%= @location[:name] %></h1>
   </div>
 </div>
+
 
 <!-- Page Content -->
 <div class="container">
@@ -19,3 +20,5 @@
     <%= link_to('Add Post', new_post_path, :class => 'btn btn-primary')  %>
 
 </div> <!--Page /.container -->
+
+
