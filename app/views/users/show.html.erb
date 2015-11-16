@@ -5,7 +5,7 @@
 			<h1><%= @user[:first_name] %> <%= @user[:last_name] %></h1>
 			<img src="http://placehold.it/200x200" alt="profile photo">	
 			<p></p> <!-- padding -->
-			<p><strong>Home Base: </strong><%= @user.neighborhood %></p>
+			<p><strong>Home Base: </strong><%= @user.location %></p>
 			<p></p> <!-- padding -->
 			<p>Bio</p>
     		<p><strong>Join Date: </strong><small><%= time_ago_in_words(@user.created_at)%> ago</small></p>
