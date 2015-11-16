@@ -1,79 +1,41 @@
+<!-- POST SHOW PAGE -->
 <div class="container">
+	<%= link_to 'All posts', posts_path %> <!-- CAN THIS GO IN THE NAVBAR? -->
 	<div class="row">
-		<div class="col-sm-3">
+		<div class="text_body_space col-sm-3">
 			<img src="http://placehold.it/200x200" alt="profile photo"></br>
-			<small><%= current_user[:first_name]%></small>
 		</div>
-		<div class="col-sm-9">
+		<div class="text_body_space col-sm-9">
 			<h2><%= @post[:title] %></h2>
-			<h4><%= @location[:name] %> <em>at</em> <%= @post.created_at.strftime("%d %b %Y") %> <%= @post.created_at.strftime("%H:%M") %></h4>
+			<h4><%= @location[:name] %> <!-- LOCATION DOESN'T MATCH UP WITH SELECTED LOCATION WHEN THE POST IS MADE. WHY? --> <em>at</em> <%= @post.created_at.strftime("%d %b %Y") %> <%= @post.created_at.strftime("%H:%M") %></h4>
 		</div>
 	</div>
-	<div class="row text_body_space">
-		<div class="col-sm-offset-2 col-sm-8">
-			<%= @post[:body] %>
-		</div>
-	</div>
-   <%= button_to "Delete", post_path, :class => "btn btn-danger pull-right", :method => :delete, data: { confirm: "Confirm delete please?"} %>
+    <h3><%= @post.title %></h3>
+    <h4> By:
+      <a href="<%= user_path(@post.user) %>">
+        <%= @post.user.first_name %> <%= @post.user.last_name %>
+      </a>
+    </h4>
+      <p><%= time_ago_in_words(@post.created_at)%> ago<p>
+    
 
-   <%= button_to "Edit", edit_post_path, :class => "btn btn-success pull-right", :method => :get %>
- 
-	<div class="row text_body_space">
-		<p>Comments will go here</p>
-	</div>
+    <hr>
+      <p><%= @post.body %></p>
+    <hr>
+    <% if current_user.id == @post.user.id %>
+    <div class="row">
+    		<div class="col-md-6">
+          <%= button_to 'Edit article', edit_post_path(@post),
+              { method: :get, class: 'btn btn-primary' } %>
+        </div>
+        <div class="col-md-6">
+          <%= button_to 'Delete article', post_path(@post),
+              { method: :delete, data: { confirm: 'Are you sure?' },
+                 class: 'btn btn-danger' } %>
+       	</div>
+    <% end %>
+    </div>
 </div>
-
-<hr>
-<!-- NEW PAGE -->
-<hr>
-
-<div class='container'>
-	<div class="row">
-		<div class="col-md-2"></div>
-
-  		<div class='col-md-6'>
-
-		    <%= link_to 'All posts', posts_path %>
-
-		    <br>
-
-		    <h3><%= @post.title %></h3>
-		    <h4> By:
-		      <a href="<%= user_path(@post.user) %>">
-		        <%= @post.user.first_name %> <%= @post.user.last_name %>
-		      </a>
-		    </h4>
-		      <p><%= time_ago_in_words(@post.created_at)%> ago<p>
-		    
-
-		    <hr>
-		      <p><%= @post.body %></p>
-		    <hr>
-		    <% if current_user.id == @post.user.id %>
-		    <div class="row">
-		    		<div class="col-md-6">
-		          <%= button_to 'Edit article', edit_post_path(@post),
-		              { method: :get, class: 'btn btn-primary' } %>
-		        </div>
-		        <div class="col-md-6">
-		          <%= button_to 'Delete article', post_path(@post),
-		              { method: :delete, data: { confirm: 'Are you sure?' },
-		                 class: 'btn btn-danger' } %>
-		       	</div>
-		    <% end %>
-		    </div>
-    	</div>
-		<div class="col-md-2"></div>	
- </div>
-</div>
-
-
-<style>
-	.text_body_space {
-	    outline: navy solid;
-	    padding-bottom: 300px;
-	}
-</style>
 
 
 
