@@ -1,10 +1,16 @@
 <%= form_for @post do |f| %>
 <div>
 	<p>Title:</p>
-  <%= f.text_field :title %>
-</div>
-<br>
-<div>
+
+		<%= f.text_field :title %>
+	</div>
+    <br>
+    <div>
+    <p>Tags:</p>
+        <%= f.select :tag_list, [['Food'],['News'],['Music'],['Bars'],['Nightlife']] %>
+    </div>
+    <div>
+
     <p>Body:</p>
     <%= f.text_field :body %>
 </div>
