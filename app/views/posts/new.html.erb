@@ -4,7 +4,7 @@
     <%= f.text_field :title, placeholder: "Post Title" %>
   </div>
   <div>
-    <%= f.text_field :tag_list, placeholder: "Tags (separated by commas)" %>
+    <%= f.select :tag_list, [['Food'],['News'],['Music'],['Bars'],['Nightlife']] %>
   </div>
   <div>
     <%= f.text_field :body, placeholder: "Post Body" %>
