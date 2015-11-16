@@ -76,11 +76,13 @@
 				<h2>Comments</h2>
 				<ul>
 					<% if @post.comments %>
-					<% @post.comments.each do |comment| %>
-					<li><%= comment.feedback %></li>
-					<% end %>
+						<% @post.comments.each do |comment| %>
+							<li><%= comment.feedback %></li>
+							<%= button_to "Delete comment", post_comment_path(@post, comment), {method: :delete, data: {
+								confirm: 'Are you sure?'}, class: 'btn btn-danger'} %>
+						<% end %>
 					<% else %>
-					<p>No post exist.</p>
+						<p>No post exist.</p>
 					<% end %>
 				</ul>
 			</div>	

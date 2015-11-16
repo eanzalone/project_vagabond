@@ -19,6 +19,14 @@ class CommentsController < ApplicationController
 		# # 	render 'posts/show'
 		# end
 	end
+	def destroy
+	  	id = params[:id]
+	  	# @post = Post.find(params[:post_id])
+		@comment = Comment.find(id)
+		@post = @comment.post
+		@comment.destroy
+		redirect_to @post
+	end
 
 	private
 	def comment_params

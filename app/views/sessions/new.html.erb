@@ -1,6 +1,14 @@
 <h1>Login</h1>
 
 <%= form_tag sessions_path do %>
+<% if flash[:danger].present? %>
+    <div class="error_messages">
+      <h2>Error(s): </h2>
+        <ul>
+      		<%= flash[:danger] %>
+      	</ul>
+    </div>
+  <% end %>
 	<span>Email: </span><br>
 	<%= text_field_tag :email %><br>
 	<span>Password: </span><br>

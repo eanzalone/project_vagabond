@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
      redirect_to root_url
     else
       #there was an error logging the user in
+      flash[:danger] = "Invalid email/password combination"
       render :new 
     end
   end
