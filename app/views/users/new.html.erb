@@ -1,21 +1,29 @@
-
-
 Sign Up
 <%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Error(s): </h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+      </ul>
+  <% end %>
   </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <div>
-    <%= f.select :neighborhood, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
-  </div>
-    <%= f.submit "Sign Up" %>
-<% end %> 
+ <div>
+   <%= f.text_field :first_name, placeholder: "First Name" %>
+ </div>
+ <div>
+   <%= f.text_field :last_name, placeholder: "Last Name" %>
+ </div>
+ <div>
+   <%= f.text_field :email, placeholder: "Email" %>
+ </div>
+ <div>
+   <%= f.password_field :password, placeholder: "Password" %>
+ </div>
+ <div>
+   <%= f.select :neighborhood, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
+ </div>
+   <%= f.submit "Sign Up" %>
+<% end %>
