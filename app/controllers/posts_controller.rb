@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
 	def create
 		# user = User.find(session[:user_id])
-		post_params = params.require(:post).permit(:title, :body)
+		post_params = params.require(:post).permit(:title, :body, :tag_list)
 		@location = Location.where(name: params[:post][:location]).first
 		@post = current_user.posts.new(post_params)
 		@post.update(location_id: @location.id)
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-		updated_attributes = params.require(:post).permit(:title, :body)
+		updated_attributes = params.require(:post).permit(:title, :body, :tag_list)
 		@post.update_attributes(updated_attributes)
 		redirect_to @post
 	end
@@ -42,4 +42,5 @@ class PostsController < ApplicationController
 		@post.destroy
 		redirect_to @post
 	end
+
 end
