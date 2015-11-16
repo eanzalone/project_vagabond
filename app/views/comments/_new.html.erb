@@ -1,21 +1,21 @@
 <h3>Add a new comment</h3>
 
-  <%= form_for [@post, @comment] do |f| %>
+<%= form_for [@post, @comment] do |f| %>
 
   <% if @comment.errors.any? %>
   <div class='comment-form'>
-  <div id="error_explanation">
-    <h2 class="error-warning">
-      <%= pluralize(@comment.errors.count, "error") %> prohibited
-      this comment from being saved:
-    </h2>
-    <ul>
-      <% @comment.errors.full_messages.each do |msg| %>
-      <li class="error-message"><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
+    <div id="error_explanation">
+      <h2 class="error-warning">
+        <%= pluralize(@comment.errors.count, "error") %> prohibited
+        this comment from being saved:
+      </h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li class="error-message"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
 
   <p class="comment-form-title">
     <%= f.label :feedback %>
@@ -26,4 +26,4 @@
     <%= f.submit %>
   </p>
 </div>
-  <% end %>
+<% end %>

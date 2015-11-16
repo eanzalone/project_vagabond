@@ -23,6 +23,8 @@ class PostsController < ApplicationController
 		# post = Post.create(post_params)
 		if @post.save
 			redirect_to location_path(@location[:id])
+		else
+			render :new
 		end
 	end
 	

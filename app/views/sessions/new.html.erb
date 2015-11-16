@@ -1,6 +1,6 @@
 <h1>Login</h1>
 
-<%= form_tag sessions_path do %>
+<%= form_for :user, url: '/sessions' do |f| %>
 <% if flash[:danger].present? %>
     <div class="error_messages">
       <h2>Error(s): </h2>
@@ -10,8 +10,8 @@
     </div>
   <% end %>
 	<span>Email: </span><br>
-	<%= text_field_tag :email %><br>
+	<%= f.text_field :email %><br>
 	<span>Password: </span><br>
-	<%= password_field_tag :password %><br>
-	<%= submit_tag "Login" %>
+	<%= f.password_field :password %><br>
+	<%= f.submit "Login" %>
 <% end %>
