@@ -4,3 +4,43 @@ You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
 /*POSTS.NEW*/
+.form_header {
+	text-align: center;
+}
+
+#new_post_body {
+	resize: none;
+	height: 250px;
+}
+
+#sub_new_post_btn {
+	margin-top: 20px;
+}
+
+/*POSTS.EDIT*/
+#edit_post_body {
+	resize: none;
+	height: 250px;
+}
+
+#update_post_btn {
+	margin-top: 20px;
+}
+
+/*POSTS.SHOW*/
+#userpic_on_post {
+	// border: red solid;
+	margin-top: 15px;
+}
+
+#border_to_delete {
+	border: green solid;
+}
+
+#post_body {
+	margin-top: 30px;
+}
+
+#created_comments {
+	margin-top: 20px;
+}

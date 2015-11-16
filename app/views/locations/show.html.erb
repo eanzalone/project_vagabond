@@ -1,7 +1,7 @@
 <!-- Neighborhood Name Splash -->
-<div class="jumbotron text-center">
+<div class ="jumbotron text-center" style="background: url(<%= asset_url @location[:name] %>); background-position: center; background-size: 100%">
   <div class="container">
-   <h1><%= @location[:name] %></h1>
+   <h1 id="neighborhood-name"><%= @location[:name].upcase %></h1>
   </div>
 </div>
 
@@ -10,12 +10,65 @@
 
 <!-- Neighborhood Navigation Area -->
 
-  <div class="col-sm-12"> <!-- Post Container -->
+    <!-- Posts Content -->
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+			          <% @posts.each do |post| %>
+                <!-- First Blog Post -->
+                <h2>
+                    <a href="#"><%= link_to post.title, post_path(post) %></a>
+                </h2>
+                <p class="lead">
+                    by <a href="<%= user_path(post.user) %>"><%= post.user.first_name %> <%= post.user.last_name %></a>
+                     in <%= raw post.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+                </p>
 
-    <% @posts.each do |post| %>
-      <li><%= link_to post.title, post_path(post) %></li>
-    <% end %>
 
-    <%= link_to('Add Post', new_post_path, :class => 'btn btn-primary')  %>
+              
 
-</div> <!--Page /.container -->
+                <p><span class="glyphicon glyphicon-time"></span> <%= time_ago_in_words(post.created_at)%> ago</p>
+                <hr>
+                <p><%= post.body %></p>
+                <a class="btn btn-primary" href="<%= post_path(post)%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+							<% end %>
+
+                <hr>
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Post Tags</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Food</a>
+                                </li>
+                                <li><a href="#">News</a>
+                                </li>
+                                <li><a href="#">Music</a>
+                                </li>
+                                <li><a href="#">Bars</a>
+                                </li>
+                                <li><a href="#">Nightlife</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.col-lg-6 --> 
+                   </div>
+                    <!-- /.row -->
+                </div>
+            </div>
+          </div>
+</div>

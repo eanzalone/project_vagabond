@@ -1,31 +1,29 @@
-
-Sign Up
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Error(s): </h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
- <div>
-   <%= f.text_field :first_name, placeholder: "First Name" %>
- </div>
- <div>
-   <%= f.text_field :last_name, placeholder: "Last Name" %>
- </div>
- <div>
-   <%= f.text_field :email, placeholder: "Email" %>
- </div>
- <div>
-   <%= f.password_field :password, placeholder: "Password" %>
- </div>
- <div>
-   <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
- </div>
-   <%= f.submit "Sign Up" %>
-<% end %>
-
+<!-- SIGN UP PAGE -->
+<div class="form">
+  <h1>Sign Up</h1>
+  <div id="signup_form" class="col-sm-offset-4 col-sm-4">
+    <%= form_for @user do |f| %>
+      <div>
+        First Name:<br>
+        <%= f.text_field :first_name, placeholder: "First Name", :class => 'form-control' %>
+      </div>
+      <br>
+      <div>
+        Last Name:<br>
+        <%= f.text_field :last_name, placeholder: "Last Name", :class => 'form-control' %>
+      </div>
+      <br>
+      <div>
+        Email:<br>
+        <%= f.text_field :email, placeholder: "Email", :class => 'form-control' %>
+      </div>
+      <br>
+      <div>
+        Password:<br>
+        <%= f.password_field :password, placeholder: "Password", :class => 'form-control' %>
+      </div>
+      <br>
+        <%= f.submit "Sign Up" %>
+    <% end %> 
+  </div>
+</div>
