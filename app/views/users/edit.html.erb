@@ -1,17 +1,27 @@
 <!-- UPDATE PROFILE PAGE -->
-<div class="form">
-    <div>
-<%= form_for @user do |f| %>
-	<p>First Name:</p>
-		<%= f.text_field :first_name %>
-	</div>
-    </br>
-    <div>
-    <p>Last Name:</p>
-    	<%= f.text_field :last_name %>
+<h1 align="center">Edit Profile Information</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">   
+                <%= form_for @user do |f| %>
+                    <div>
+                        <p>First Name:</p>
+                            <%= f.text_field :first_name, :class => 'form-control' %>
+                    </div>
+                    </br>
+                    <div>
+                        <p>Last Name:</p>
+                            <%= f.text_field :last_name, :class => 'form-control' %>
+                    </div>
+                    </br>
+                    <!-- <div>
+                        <p>Bio</p>
+                            <%= f.text_area :last_name, :class => 'form-control' %>
+                    </div> 
+                    </br> -->
+                    <small><em></em></small>
+                    <%= f.submit "update", class:"btn btn-primary"%>
+                <% end %>
+            </div>
+        </div>
     </div>
-    </br>
-    <small>Should add forms for editing Bio, Home Base, and Profile Pic.</small>
-    </br>
-    <%= f.submit "update", class:"btn btn-primary"%>
-<% end %>
