@@ -18,12 +18,12 @@
   <% end %>
 
   <p class="comment-form-title">
-    <%= f.label :feedback %>
+    <%= f.label :'New Comment' %>
     <%= f.text_field :feedback, class: 'form-control' %>
   </p>
 
   <p class="comment-form-submit">
-    <%= f.submit %>
+    <%= f.submit "Post Comment", :class => 'btn btn-sm btn-primary pull-right' %>
   </p>
 </div>
   <% end %>
