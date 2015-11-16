@@ -1,32 +1,36 @@
-  <div class="jumbotron text-center">
-    <div class="container">
-    <div class="row">
-    <%= button_to "Create User", sign_up_path, :class => "btn btn-danger pull-right", :method => :get %>
-  
-    <%= button_to "Login", login_path, :class => 'btn btn-primary pull-right', :method => :get %>
-    </div>
-    <div class="row">
-  <!-- fix pull right later -->
-      <h1>Vagabond App</h1>
-      <div class="lead"><b>San Francisco</b>districts</div>
-      </div>
-    </div>
-  </div>
+<!-- HOME PAGE -->
+<div>
+<%= button_to "Create User", sign_up_path, :class => "btn btn-danger pull-right", :method => :get %>
+
+<%= button_to "Login", login_path, :class => 'btn btn-primary pull-right', :method => :get %>
+</div>
+<div id="homepg_jumbotron" class="jumbotron text-center">
   <div class="container">
-  	<hr>
-  	<div class="row">
-  		<div class="col-sm-4">
-  			<h3 class='text-center'>Food</h3>
-  			<div class="lead">Place to Eat</div>
-  		</div>
-  		<div class="col-sm-4">
-  			<h3 class='text-center'>Meet</h3>
-  			<div class="lead">where cool people gather</div>
-  		</div>
-  		<div class="col-sm-4">
-  			<h3 class='text-center'>Hike</h3>
-  			<div class="lead">The Great out door</div>
-  		</div>
-  	</div>
+  <div class="row">
+    <h1>Vagabond App</h1>
+    <div class="lead"><b>San Francisco</b>districts</div>
   </div>
-</body>
+  </div>
+</div>
+<div class="container">
+	<hr>
+	<div class="row">
+		<div class="col-sm-4">
+			<h3 class='text-center'>Food</h3>
+			<div class="lead">Place to Eat</div>
+		</div>
+		<div class="col-sm-4">
+			<h3 class='text-center'>Meet</h3>
+			<div class="lead">where cool people gather</div>
+		</div>
+		<div class="col-sm-4">
+			<h3 class='text-center'>Hike</h3>
+			<div class="lead">The Great out door</div>
+		</div>
+	</div>
+</div>
+<style>
+/*.navbar {
+  visibility: hidden;
+}*/
+</style>
