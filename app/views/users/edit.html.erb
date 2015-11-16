@@ -2,6 +2,7 @@
 <div class="form">
     <div>
 <%= form_for @user do |f| %>
+<<<<<<< HEAD
 	<p>First Name:</p>
 		<%= f.text_field :first_name %>
 	</div>
@@ -16,3 +17,20 @@
     <%= f.submit "update", class:"btn btn-primary"%>
 <% end %>
 </div>
+=======
+<div>
+	<p>FirstName:</p>
+  <%= f.text_field :first_name %>
+</div>
+<br>
+<div>
+    <p>LastName:</p>
+    <%= f.text_field :last_name %>
+</div>
+<br>
+<div>
+    <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
+</div>
+<%= f.submit "update", class:"btn btn-primary"%>
+<% end %>
+>>>>>>> e9cdad44692949b983587b94697ce6bb6d955f2c
