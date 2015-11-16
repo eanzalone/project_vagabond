@@ -1,15 +1,18 @@
 <!-- UPDATE PROFILE PAGE -->
+<div class="form">
+    <div>
 <%= form_for @user do |f| %>
-	<div>
-	<p>FirstName:</p>
+	<p>First Name:</p>
 		<%= f.text_field :first_name %>
 	</div>
-    <br>
+    </br>
     <div>
-    <p>LastName:</p>
+    <p>Last Name:</p>
     	<%= f.text_field :last_name %>
     </div>
-    <br>
-
+    </br>
+    <small>Should add forms for editing Bio, Home Base, and Profile Pic.</small>
+    </br>
     <%= f.submit "update", class:"btn btn-primary"%>
 <% end %>
+</div>

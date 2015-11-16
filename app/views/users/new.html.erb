@@ -1,6 +1,6 @@
 <!-- SIGN UP PAGE -->
 <div class="form">
-  <h1 id="su_page_title">Sign Up</h1>
+  <h1>Sign Up</h1>
   <div id="signup_form">
     <%= form_for @user do |f| %>
       <div>
@@ -22,3 +22,17 @@
     <% end %> 
   </div>
 </div>
+<form class="pure-form">
+    <fieldset class="pure-group">
+        <input type="text" class="pure-input-1-2" placeholder="Username">
+        <input type="text" class="pure-input-1-2" placeholder="Password">
+        <input type="email" class="pure-input-1-2" placeholder="Email">
+    </fieldset>
+
+    <fieldset class="pure-group">
+        <input type="text" class="pure-input-1-2" placeholder="A title">
+        <textarea class="pure-input-1-2" placeholder="Textareas work too"></textarea>
+    </fieldset>
+
+    <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Sign in</button>
+</form>
