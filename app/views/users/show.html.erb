@@ -5,20 +5,6 @@
 			<h1><%= @user[:first_name] %> <%= @user[:last_name] %></h1>
 			<img src="http://placehold.it/200x200" alt="profile photo">	
 			<p></p> <!-- padding -->
-			<p><strong>Home Base: </strong><%= @user.location %></p>
-			<p><strong>Favorite Topic: </strong><small>(generated from which subject tag is in most of their posts)</small></p>
-			<div class="row">
-				<div class="col-sm-4 stats">
-					<p>Following (#)</p>
-				</div>
-				<div class="col-sm-4 stats">
-					<p>Followers (#)</p>
-				</div>
-				<div class="col-sm-4 stats">
-					<p>Posts</br>(#)</p>
-				</div>
-			</div>
-			<p></p> <!-- padding -->
 			<p>Bio</p>
     		<p><strong>Join Date: </strong><small><%= time_ago_in_words(@user.created_at)%> ago</small></p>
     		<%=link_to "Edit profile", edit_user_path, class:"btn btn-primary" %> 
