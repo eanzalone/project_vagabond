@@ -14,12 +14,15 @@
  *= require_self
  */
 
-.site-footer{
-  position:fixed;
-  bottom:0;
-  background-color: red;
-  text-align: center;
-  width:100%;
-  height:60px;   /* Height of the footer */
-  background:#6cf;
+
+.navbar,
+.navbar-header a,
+.navbar-nav .dropdown > a,
+.navbar li a,
+.navbar .nav li a:hover,
+.navbar-nav .dropdown-toggle:hover,
+.navbar-nav .open > a.dropdown-toggle:focus,
+.navbar-nav .dropdown-menu a:hover {
+  background-color: #286090;
+  color: white;
 }

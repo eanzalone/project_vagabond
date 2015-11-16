@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :auth_user?, only: :edit
+
 	def index
 		@user = User.all
 		render :index
@@ -6,14 +8,17 @@ class UsersController < ApplicationController
 
 	def new 
 		@user = User.new
-		render :new
 	end
 
 	def create
 		user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :neighborhood)
-		@user = User.create(user_params)
-		login(@user)
-		redirect_to posts_path
+		@user = User.new(user_params)
+		if @user.save	
+			session[:user_id] = @user.id
+			redirect_to posts_path
+		else 
+			redirect_to sign_up_path
+		end
 	end
 
 	def show
@@ -27,11 +32,23 @@ class UsersController < ApplicationController
 		render :edit
 	end
 
+
 	def update                
 		@user = User.find(params[:id])
 		updated_attributes = params.require(:user).permit(:first_name, :last_name)
 		@user.update_attributes(updated_attributes)
 		redirect_to @user 
 	end
+
+	def auth_user?
+    # layout: false prevents the application layout page from loading
+    # returning false/true stops/allows the action
+    unless current_user.id == params[:id].to_i
+      render file: 'public/401.html', status: 401, layout: false
+      false
+    else
+      true
+    end
+  end
 
 end
