@@ -14,14 +14,19 @@
         <div class="row">
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-							<% @posts.each do |post| %>
+			          <% @posts.each do |post| %>
                 <!-- First Blog Post -->
                 <h2>
                     <a href="#"><%= link_to post.title, post_path(post) %></a>
                 </h2>
                 <p class="lead">
                     by <a href="<%= user_path(post.user) %>"><%= post.user.first_name %> <%= post.user.last_name %></a>
+                     in <%= raw post.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
                 </p>
+
+
+              
+
                 <p><span class="glyphicon glyphicon-time"></span> <%= time_ago_in_words(post.created_at)%> ago</p>
                 <hr>
                 <p><%= post.body %></p>
