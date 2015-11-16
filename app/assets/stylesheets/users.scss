@@ -1,4 +1,25 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#profile-info {
+  text-align: center;
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
+  margin-top: 25px;
+}
 
+#profile-data {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  margin-top: 25px;
+}
+
+.preview_text {
+	color: #A4A4A4;
+}
+
+#homepg_jumbotron {
+	background-color: navy;
+}
+
+#signup_form {
+	text-align: center;
+}
+ #su_page_title{
+ 	text-align: center;
+ }
