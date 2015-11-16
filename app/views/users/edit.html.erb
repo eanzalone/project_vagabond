@@ -1,18 +1,17 @@
-
-
+<!-- UPDATE PROFILE PAGE -->
+<div class="form">
+    <div>
 <%= form_for @user do |f| %>
-<div>
-	<p>FirstName:</p>
-  <%= f.text_field :first_name %>
-</div>
-<br>
-<div>
-    <p>LastName:</p>
-    <%= f.text_field :last_name %>
-</div>
-<br>
-<div>
-    <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']] %>
-</div>
-<%= f.submit "update", class:"btn btn-primary"%>
+	<p>First Name:</p>
+		<%= f.text_field :first_name %>
+	</div>
+    </br>
+    <div>
+    <p>Last Name:</p>
+    	<%= f.text_field :last_name %>
+    </div>
+    </br>
+    <small>Should add forms for editing Bio, Home Base, and Profile Pic.</small>
+    </br>
+    <%= f.submit "update", class:"btn btn-primary"%>
 <% end %>

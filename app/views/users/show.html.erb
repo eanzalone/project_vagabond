@@ -1,9 +1,9 @@
+<!-- PROFILE PAGE -->
 <div class="container">
 	<div class="row">
-		<div id="profile-info" class="col-sm-3">
-			<h3><%= @user[:first_name] %><%= @user[:last_name] %></h3>
-			<img src="http://placehold.it/200x200" alt="profile photo">
-			<%=link_to "Edit profile", edit_user_path, class:"btn btn-primary" %> 	
+		<div id="profile-info" class="col-sm-offset-1 col-sm-3 affix">
+			<h1><%= @user[:first_name] %> <%= @user[:last_name] %></h1>
+			<img src="http://placehold.it/200x200" alt="profile photo">	
 			<p></p> <!-- padding -->
 			<p><strong>Home Base: </strong><%= @user.location %></p>
 			<p><strong>Favorite Topic: </strong><small>(generated from which subject tag is in most of their posts)</small></p>
@@ -20,35 +20,19 @@
 			</div>
 			<p></p> <!-- padding -->
 			<p>Bio</p>
-      <p><strong>Join Date: </strong><small><%= time_ago_in_words(@user.created_at)%> ago</small></p>
+    		<p><strong>Join Date: </strong><small><%= time_ago_in_words(@user.created_at)%> ago</small></p>
+    		<%=link_to "Edit profile", edit_user_path, class:"btn btn-primary" %> 
+    		<p></p> <!-- padding -->
 		</div>
-		<div id="profile-data" class="col-sm-offset-1 col-sm-6">
-			<h3>Posts</h3>
-				<% @user.posts.each do |post| %>
-					<li> <%= link_to post.title, post_path(post) %></li>
-				<% end %>
-		</div>
-		<div id="map-space" class="col-sm-offset-1 col-sm-6">
-			<h3>Map</h3>
-			<p><small>(Idea: with pins that correspond with the locations of their posts)</small></p>
+		<div id="profile-data" class="col-sm-offset-5 col-sm-6">
+			<h2>Posts</h2>
+			<% @user.posts.each do |post| %>
+				<h4><%= link_to post.title, post_path(post) %><p class="pull-right"><small><small><small>Comments (x)</small></small></small></p></h4>
+				<ul>
+					<p class="preview_text"><small>I really want to find a way to take the first xx characters of a post and make a preview of it.</small></p>
+				</ul>
+				<hr>
+			<% end %>
 		</div>
 	</div>
 </div>
-<style>
-	#profile-info {
-		text-align: center;
-	    outline: navy solid;
-	    padding-bottom: 150px;
-	}
-	#profile-data {
-	    outline: navy solid;
-	    padding-bottom: 300px;
-	}
-	#map-space {
-	    outline: navy solid;
-	    padding-bottom: 150px;
-	}
-	.stats{
-		outline: navy solid thin;
-	}
-</style>

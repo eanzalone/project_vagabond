@@ -1,6 +1,43 @@
-<div class='container'>
+<!-- POST SHOW PAGE -->
+<div class="container">
+	<%= link_to 'All posts', posts_path %> <!-- CAN THIS GO IN THE NAVBAR? -->
 	<div class="row">
+
+
+		<div class="text_body_space col-sm-3">
+			<img src="http://placehold.it/200x200" alt="profile photo"></br>
+		</div>
+		
+	</div>
+    <h3><%= @post.title %></h3>
+    <h4> By:
+      <a href="<%= user_path(@post.user) %>">
+        <%= @post.user.first_name %> <%= @post.user.last_name %>
+      </a>
+    </h4>
+      <p><%= time_ago_in_words(@post.created_at)%> ago<p>
+    
+
+    <hr>
+      <p><%= @post.body %></p>
+    <hr>
+    <% if current_user.id == @post.user.id %>
+    <div class="row">
+    		<div class="col-md-6">
+          <%= button_to 'Edit article', edit_post_path(@post),
+              { method: :get, class: 'btn btn-primary' } %>
+        </div>
+        <div class="col-md-6">
+          <%= button_to 'Delete article', post_path(@post),
+              { method: :delete, data: { confirm: 'Are you sure?' },
+                 class: 'btn btn-danger' } %>
+       	</div>
+    <% end %>
+    </div>
+</div>
+
 		<div class="col-md-2"></div>
+
 
 		<div class='col-md-6'>
 
@@ -49,17 +86,47 @@
 			</div>	
 		</div>
 	</div>
+
+  		<div class='col-md-6'>
+
+		    <%= link_to 'All posts', posts_path %>
+
+		    <br>
+
+		    <h3><%= @post.title %></h3>
+		    <h4> By:
+		      <a href="<%= user_path(@post.user) %>">
+		        <%= @post.user.first_name %> <%= @post.user.last_name %>
+		      </a>
+		    </h4>
+		      <p><%= time_ago_in_words(@post.created_at)%> ago<p>
+		    
+
+		    <hr>
+		      <p><%= @post.body %></p>
+		    <hr>
+
+				<p>Tags: <%= raw @post.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></p>
+
+
+		    <% if current_user.id == @post.user.id %>
+		    <div class="row">
+		    		<div class="col-md-6">
+		          <%= button_to 'Edit article', edit_post_path(@post),
+		              { method: :get, class: 'btn btn-primary' } %>
+		        </div>
+		        <div class="col-md-6">
+		          <%= button_to 'Delete article', post_path(@post),
+		              { method: :delete, data: { confirm: 'Are you sure?' },
+		                 class: 'btn btn-danger' } %>
+		       	</div>
+		    <% end %>
+		    </div>
+    	</div>
+		<div class="col-md-2"></div>	
+ </div>
+
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 
