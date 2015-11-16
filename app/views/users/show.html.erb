@@ -5,9 +5,6 @@
 			<h1><%= @user[:first_name] %> <%= @user[:last_name] %></h1>
 			<img src="http://placehold.it/200x200" alt="profile photo">	
 			<p></p> <!-- padding -->
-<<<<<<< HEAD
-			<p><strong>Home Base: </strong><%= @user.neighborhood %></p>
-=======
 			<p><strong>Home Base: </strong><%= @user.location %></p>
 			<p><strong>Favorite Topic: </strong><small>(generated from which subject tag is in most of their posts)</small></p>
 			<div class="row">
@@ -21,7 +18,6 @@
 					<p>Posts</br>(#)</p>
 				</div>
 			</div>
->>>>>>> e9cdad44692949b983587b94697ce6bb6d955f2c
 			<p></p> <!-- padding -->
 			<p>Bio</p>
     		<p><strong>Join Date: </strong><small><%= time_ago_in_words(@user.created_at)%> ago</small></p>
