@@ -1,9 +1,11 @@
+<div class="form">
 <h1>Login</h1>
 
 <%= form_tag sessions_path do %>
-	<span>Email: </span><br>
-	<%= text_field_tag :email %><br>
-	<span>Password: </span><br>
-	<%= password_field_tag :password %><br>
+	Email:<br>
+	<%= text_field :email, placeholder: "Email", :class => 'form-control' %><br>
+	Password:<br>
+	<%= password_field :password, placeholder: "Password", :class => 'form-control' %><br>
 	<%= submit_tag "Login" %>
 <% end %>
+</div>

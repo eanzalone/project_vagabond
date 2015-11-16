@@ -2,3 +2,27 @@
 They will automatically be included in application.css.
 You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+/*POSTS.NEW*/
+.form_header {
+	text-align: center;
+}
+
+#new_post_body {
+	resize: none;
+	height: 250px;
+}
+
+#sub_new_post_btn {
+	margin-top: 20px;
+}
+
+/*POSTS.EDIT*/
+#edit_post_body {
+	resize: none;
+	height: 250px;
+}
+
+#update_post_btn {
+	margin-top: 20px;
+}
