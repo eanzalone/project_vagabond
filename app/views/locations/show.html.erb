@@ -20,8 +20,8 @@
       <a href="#"><%= link_to post.title, post_path(post) %></a>
     </h2>
     <p class="lead">
-      by <a href="<%= user_path(post.user) %>"><%= post.user.first_name %> <%= post.user.last_name %></a>
-      in <%= raw post.tag_list.map {|t| link_to t, tag_path(@location, t)}.join(', ') %>
+    by <a href="<%= user_path(post.user) %>"><%= post.user.first_name %> <%= post.user.last_name %></a>
++                   in <%= raw post.tag_list.map {|t| link_to t, tag_path(@location, t)}.join(', ') %>
     </p>
 
 
