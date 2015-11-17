@@ -1,19 +1,20 @@
 <div class="form">
 <h1>Login</h1>
 
-<%= form_tag sessions_path do%>
-	<div>
-		Email:<br>
-		<%= text_field :email, placeholder: "Email", :class => 'form-control' %>
-	</div>
-	<br>
-	<div>
-		Password:<br>
-		<%= password_field :password, placeholder: "Password", :class => 'form-control' %>
-	</div>
-	<br>
-	<div>
-		<%= submit_tag "Login" %>
-	</div>
-<% end %>
+
+<%= form_for :user, url: '/sessions' do |f| %>
+<% if flash[:danger].present? %>
+   <div class="error_messages">
+     <h2>Error(s): </h2>
+       <ul>
+             <%= flash[:danger] %>
+         </ul>
+   </div>
+ <% end %>
+    <span>Email: </span><br>
+    <%= f.text_field :email %><br>
+    <span>Password: </span><br>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Login" %>
+ <% end %>
 </div>
