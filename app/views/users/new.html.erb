@@ -3,6 +3,16 @@
   <h1>Sign Up</h1>
   <div id="signup_form" class="col-sm-offset-4 col-sm-4">
     <%= form_for @user do |f| %>
+          <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Error(s): </h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
       <div>
         First Name:<br>
         <%= f.text_field :first_name, placeholder: "First Name", :class => 'form-control' %>

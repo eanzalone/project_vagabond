@@ -6,126 +6,52 @@
 		<div id="userpic_on_post" class="col-sm-offset-2 col-sm-2">
 			<img src="http://placehold.it/100x100" alt="profile photo"></br>
 		</div>
-		
-	</div>
-	<h3><%= @post.title %></h3>
-	<h4> By:
-		<a href="<%= user_path(@post.user) %>">
-			<%= @post.user.first_name %> <%= @post.user.last_name %>
-		</a>
-	</h4>
-	<p><%= time_ago_in_words(@post.created_at)%> ago<p>
-
-
-		<hr>
-		<p><%= @post.body %></p>
-		<hr>
-		<% if current_user.id == @post.user.id %>
+		<div class="col-sm-6">
+		    <h3><%= @post.title %></h3>
+		    <h4> By:
+		      <a href="<%= user_path(@post.user) %>">
+		        <%= @post.user.first_name %> <%= @post.user.last_name %>
+		      </a>
+		    </h4>
+		    <p><%= time_ago_in_words(@post.created_at)%> ago <em>at</em> <small>Dynamic Location</small><p>
+		</div>
+    </div>
+    <div id="post_body" class="row">
+    	<p class="col-sm-offset-3 col-sm-7"><%= @post.body %></p>
+    </div>
+	<!-- EDIT AND DELETE BUTTONS -->
+	<% if current_user.id == @post.user.id %>
 		<div class="row">
-			<div class="col-md-6">
-				<%= button_to 'Edit article', edit_post_path(@post),
-				{ method: :get, class: 'btn btn-primary' } %>
+		<div class="col-sm-offset-3 col-sm-7">
+			<div class="col-sm-4">
+				<%= button_to 'Edit article', edit_post_path(@post), { method: :get, class: 'btn btn-primary btn-xs' } %>
 			</div>
-			<div class="col-md-6">
-				<%= button_to 'Delete article', post_path(@post),
-				{ method: :delete, data: { confirm: 'Are you sure?' },
-				class: 'btn btn-danger' } %>
-			</div>
-			<% end %>
-		</div>
-	</div>
-
-	<div class="col-md-2"></div>
-
-
-	<div class='col-md-6'>
-
-		<%= link_to 'All posts', posts_path %>
-
-		<br>
-
-		<h3><%= @post.title %></h3>
-		<h4> By:
-			<a href="<%= user_path(@post.user) %>">
-				<%= @post.user.first_name %> <%= @post.user.last_name %>
-			</a>
-		</h4>
-		<p><%= time_ago_in_words(@post.created_at)%> ago<p>
-
-
-			<hr>
-			<p><%= @post.body %></p>
-			<hr>
-			<% if current_user.id == @post.user.id %>
-			<div class="row">
-				<div class="col-md-6">
-					<%= button_to 'Edit article', edit_post_path(@post),
-					{ method: :get, class: 'btn btn-primary' } %>
-				</div>
-				<div class="col-md-6">
-					<%= button_to 'Delete article', post_path(@post),
-					{ method: :delete, data: { confirm: 'Are you sure?' },
-					class: 'btn btn-danger' } %>
-				</div>
-				<% end %>
+			<div class="col-sm-2 pull-right">
+				<%= button_to 'Delete article', post_path(@post), { method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' } %>
 			</div>
 		</div>
-		<div class="col-md-2">
+		</div>
+	<% end %>
+	<hr>
+	<!-- COMMENTS -->
+	<div class="row">
+		<div class="col-sm-7 col-sm-offset-3">
 			<%= render partial: 'comments/new' %>
-			<h2>Comments <% if @post.comments.any? %> <%= @post.comments.count %> <% end %></h2>
-			<ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<ul id="created_comments">
 				<% if @post.comments %>
-				<% @post.comments.each do |comment| %>
-				<li><%= comment.feedback %></li>
-				<%= button_to "Delete comment", post_comment_path(@post, comment), {method: :delete, data: {
-					confirm: 'Are you sure?'}, class: 'btn btn-danger'} %>
-					<% end %>
-					<% else %>
-					<p>No post exist.</p>
-					<% end %>
-				</ul>
-			</div>	
-		</div>
-	</div>
-
-	<div class='col-md-6'>
-
-		<%= link_to 'All posts', posts_path %>
-
-		<br>
-
-		<h3><%= @post.title %></h3>
-		<h4> By:
-			<a href="<%= user_path(@post.user) %>">
-				<%= @post.user.first_name %> <%= @post.user.last_name %>
-			</a>
-		</h4>
-		<p><%= time_ago_in_words(@post.created_at)%> ago<p>
-
-
-			<hr>
-			<p><%= @post.body %></p>
-			<hr>
-
-			<p>Tags: <%= raw @post.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></p>
-
-
-			<% if current_user.id == @post.user.id %>
-			<div class="row">
-				<div class="col-md-6">
-					<%= button_to 'Edit article', edit_post_path(@post),
-					{ method: :get, class: 'btn btn-primary' } %>
-				</div>
-				<div class="col-md-6">
-					<%= button_to 'Delete article', post_path(@post),
-					{ method: :delete, data: { confirm: 'Are you sure?' },
-					class: 'btn btn-danger' } %>
-				</div>
+					<% @post.comments.each do |comment| %>
+						<p><%= comment.feedback %></p>
+						<hr>
 				<% end %>
-			</div>
-		</div>
-		<div class="col-md-2"></div>	
+				<% else %>
+					<p>No post exist.</p>
+				<% end %>
+			</ul>
+			<hr>
+		</div>	
 	</div>
-
-</div>
-
+</div> <!-- DIV CONTAINER -->

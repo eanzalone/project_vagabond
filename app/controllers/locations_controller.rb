@@ -1,5 +1,4 @@
 class LocationsController < ApplicationController
-
 	def new
 		@location = Location.new
 	end
@@ -7,7 +6,6 @@ class LocationsController < ApplicationController
 		location_params = params.require(:location).permit(:name)
 		location = location.new(location_params)
 	end
-
 	def show
 		@location = Location.find(params[:id])
 		if params[:tag]
@@ -16,5 +14,4 @@ class LocationsController < ApplicationController
 			@posts = @location.posts
 		end
 	end
-
 end
