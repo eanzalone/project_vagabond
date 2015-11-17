@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :posts do
   	resources :comments
   end
-  resources :locations
+  resources :locations do
+    resources :posts
+  end
   resources :sessions, only: [:new, :create, :destroy]
 end

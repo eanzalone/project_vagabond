@@ -8,6 +8,10 @@ class LocationsController < ApplicationController
 	end
 	def show
 		@location = Location.find(params[:id])
-		@posts = @location.posts
+		if params[:tag]
+			@posts = @location.posts.tagged_with(params[:tag])
+		else
+			@posts = @location.posts
+		end
 	end
 end
