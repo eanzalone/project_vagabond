@@ -4,8 +4,8 @@ class Post < ActiveRecord::Base
 	belongs_to :location
 	acts_as_taggable
 
-	validates :title, presence: true, length: { minimum: 2 }
+	validates :title, presence: true, length: { minimum: 1 }
 	validates :title, presence: true, length: { maximum: 25 }
-	validates :body, presence: true, length: { minimum: 2 }
+	validates :body, presence: true, length: { minimum: 1 }
 	validates :body, presence: true, length: { maximum: 200 }
 end
