@@ -15,6 +15,7 @@
 
 #homepg_jumbotron {
 	background-color: navy;
+	text: black;
 }
 
 .form {
@@ -25,3 +26,26 @@
 	color: white;
 }
 
+#homepg_jumbo {
+  position: relative;
+  padding-bottom: 40%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  background-position: center; 
+  background-size: 100;
+  z-index:- 300000;
+} 
+
+#homepg_jumbo iframe,
+#homepg_jumbo object,
+#homepg_jumbo embed {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index:- 300000;
+}

@@ -14,28 +14,25 @@
       <% @posts.each do |post| %>
       <div class="container">
         <div class='row'>
-          <div class='col-md-6'>
+          <div class='col-md-7'>
             <h2>
              <a href="#"><%= link_to post.title, post_path(post) %></a>
             </h2>
-          </div>
-          <div class="col-md-6">
             <span class="time"> <span class="glyphicon glyphicon-time"></span> <%= time_ago_in_words(post.created_at)%> ago</span>
             <p class="lead">
              by <a href="<%= user_path(post.user) %>"><%= post.user.first_name %> <%= post.user.last_name %></a>
             in <%= raw post.tag_list.map {|t| link_to t, tag_path(@location, t)}.join(', ') %>
             </p>
+            <div class="col-md-12">
+            <br>
+              <h4><p><%= post.body %></p></h4>
+              <a class="btn btn-primary pull-right" href="<%= post_path(post)%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <p><%= post.body %></p>
-          <a class="btn btn-primary pull-right" href="<%= post_path(post)%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
       <% end %>
-  
     <br>
-
     <!-- Pager -->
     <ul class="pager">
       <li class="previous">
