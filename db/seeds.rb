@@ -3,28 +3,25 @@
 #
 # Examples:
 #
-locations = [
-'Bernal Heights',
-'Castro',
-'Chinatown',
-'Dogpatch',
-'Embarcadero',
-'Excelsior',
-'Financial District',
-'Glen Park',
-'Haight',
-'Hayes Valley',
-'Marina',
-'Mission',
-'Mission Bay',
-'Nob Hill',
-'Noe Valley',
-'North Beach',
-'Pacific Heights',
-'Potrero Hill',
-'Richmond',
-'Russian Hill',
-'Tenderloin'
+locations = ['Castro',
+	'Chinatown',
+	'Dogpatch',
+	'Embarcadero',
+	'Financial District',
+	'Haight',
+	'Hayes Valley',
+	'Marina',
+	'Mission',
+	'Mission Bay',
+	'Nob Hill',
+	'Noe Valley',
+	'North Beach',
+	'Pacific Heights',
+	'Potrero Hill',
+	'Richmond',
+	'Russian Hill',
+	'Sunset',
+	'Tenderloin'
 ]
 
 locations.each do |name|
