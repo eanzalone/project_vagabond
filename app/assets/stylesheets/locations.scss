@@ -6,3 +6,15 @@ You can use Sass (SCSS) here: http://sass-lang.com/
 #neighborhood-name {
 	color: white;
 }
+
+.post.thumbnail{
+	height: 250px;
+	padding: 20px;
+}
+.time{
+	float: right;
+	display:inline;
+}
+.lead{
+	display:inline;
+}

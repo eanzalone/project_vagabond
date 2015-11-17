@@ -3,12 +3,14 @@ class CommentsController < ApplicationController
 	def show
 		@post = Post.find(params[:post_id])
 		@comment = Comment.find(params[:id])
+		@user = User.find(params[:user_id])
 	end
 
 	def create
 
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(params[:comment].permit(:feedback))
+		@comment.user_id = current_user.id
 		if @comment.save
 			redirect_to @post
 		else

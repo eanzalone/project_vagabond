@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
 	def new
 		@location = Location.new
+		@location = Location.all
 	end
 	def create
 		location_params = params.require(:location).permit(:name, :slug)
