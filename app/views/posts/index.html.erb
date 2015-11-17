@@ -1,34 +1,37 @@
-<!-- Neighborhood Name Splash -->
-<div class="jumbotron text-center">
-  <div class="container">
-   <h1>Neighborhood Name</h1>
+<div id="homepg_jumbo" class="jumbotron" style= "background: url(<%= asset_url 'GGBridge' %>); background-position: center; background-size: 100%">
+  <h1><span class="app-title">HOOD</span>SF</h1>
+  <h3>Keep up with your city.</h3>
+</div>
+<div class="container">
+  <div class="col-sm-offset-4 col-sm-4" align="center">
+      <span class="label"><%= link_to "Castro", '/locations/1', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Chinatown", '/locations/2', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Dogpatch", '/locations/3', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Embarcadero", '/locations/4', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Financial District", '/locations/5', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Haight", '/locations/6', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Hayes Valley", '/locations/7', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Marina", '/locations/8', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Mission", '/locations/9', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Mission Bay", '/locations/10', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Nob Hill", '/locations/11', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Noe Valley", '/locations/12', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "North Beach", '/locations/13', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Pacific Heights", '/locations/14', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Potrero Hill", '/locations/15', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Richmond", '/locations/16', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Russian Hill", '/locations/17', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Sunset", '/locations/18', {:style=>'color:#FFFFFF;'}  %></span>
+      <span class="label"><%= link_to "Tenderloin", '/locations/19', {:style=>'color:#FFFFFF;'} %></span>
+      <hr>
   </div>
 </div>
-
-<!-- Page Content -->
 <div class="container">
-
-<!-- Neighborhood Navigation Area -->
-
-<div class="col-sm-12"> <!-- Post Container -->
-		
-		<div class="row">
-      <div class="col-md-5">
-          <a href="#">
-              <img class="img-responsive" src="http://placehold.it/200x200" alt="">
-          </a>
-      </div>
-      <div class="col-md-7">
-          <h3>Article Title</h3>
-          <h5>In: Food, Activities</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-          <a class="btn btn-primary" href="#">View Article <span class="glyphicon glyphicon-chevron-right"></span></a>
-      </div>
-  	</div>
-
-</div> <!--Post /.container -->
-
-
-
-
-</div> <!--Page /.container -->
+  <div class="col-sm-offset-3 col-sm-6">
+    <% @posts.each do |post| %>
+      <h4><%= link_to post.title, post_path(post) %></h4>
+        <p class="preview_text"><small><%=  %></small></p>
+      <hr>
+    <% end %>
+  </div>
+</div>

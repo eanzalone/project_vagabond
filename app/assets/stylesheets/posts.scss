@@ -3,6 +3,20 @@ They will automatically be included in application.css.
 You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
+/*POSTS.INDEX*/
+#homepg_jumbo {
+	text-align: center;
+	color: white;
+}
+
+.app-title {
+	color: red;
+}
+
+.label {
+	background-color: gray;
+}
+
 /*POSTS.NEW*/
 .form_header {
 	text-align: center;

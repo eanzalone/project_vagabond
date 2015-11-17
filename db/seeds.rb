@@ -3,6 +3,7 @@
 #
 # Examples:
 #
+
 locations = [
 'Castro',
 'Chinatown',
