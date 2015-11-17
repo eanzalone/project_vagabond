@@ -30,7 +30,7 @@
   <div class="col-sm-offset-3 col-sm-6">
     <% @posts.each do |post| %>
       <h4><%= link_to post.title, post_path(post) %></h4>
-        <p class="preview_text"><small>I really want to find a way to take the first xx characters of a post and make a preview of it.</small></p>
+        <p class="preview_text"><small><%=  %></small></p>
       <hr>
     <% end %>
   </div>
