@@ -4,14 +4,11 @@
 # Examples:
 #
 locations = [
-'Bernal Heights',
 'Castro',
 'Chinatown',
 'Dogpatch',
 'Embarcadero',
-'Excelsior',
 'Financial District',
-'Glen Park',
 'Haight',
 'Hayes Valley',
 'Marina',
@@ -24,6 +21,7 @@ locations = [
 'Potrero Hill',
 'Richmond',
 'Russian Hill',
+'Sunset',
 'Tenderloin'
 ]
 

@@ -27,6 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'acts-as-taggable-on', '~> 3.5'
 
+gem 'friendly_id', '~> 5.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
