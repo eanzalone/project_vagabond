@@ -9,15 +9,20 @@ class CommentsController < ApplicationController
 
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(params[:comment].permit(:feedback))
-		p @comment[:id]
+		if @comment.save
+			redirect_to @post
+		else
+			@post = Post.find(params[:post_id])
+			render 'posts/show'
+		end
+	end
+
+	def destroy
+		id = params[:id]
+		@comment = Comment.find(id)
+		@post = @comment.post
+		@comment.destroy
 		redirect_to @post
-		# redirect_to post_comment_path(@comment[:id])
-		# # if @comment.save
-		# # 	@post.comment << @comment
-		# # 	redirect_to [@post, @comment]
-		# # else
-		# # 	render 'posts/show'
-		# end
 	end
 
 	private

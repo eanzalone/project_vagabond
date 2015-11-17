@@ -1,4 +1,4 @@
-<h3>Comments</h3>
+<h3>Comments <% if @post.comments.any? %> (<%= @post.comments.count %>)<% end %></h3>
 
   <%= form_for [@post, @comment] do |f| %>
 
