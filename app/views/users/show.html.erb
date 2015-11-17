@@ -11,9 +11,10 @@
     		<p></p> <!-- padding -->
 		</div>
 		<div id="profile-data" class="col-sm-offset-5 col-sm-6">
-			<h2>Posts</h2>
+			<h2>Posts <% if @user.posts.any? %> (<%= @user.posts.count %>)<% end %></h2>
+	
 			<% @user.posts.each do |post| %>
-				<h4><%= link_to post.title, post_path(post) %><p class="pull-right"><small><small><small>Comments (x)</small></small></small></p></h4>
+				<h4><%= link_to post.title, post_path(post) %><p class="pull-right"><small><small><small>Comments (X)</small></small></small></p></h4>
 				<ul>
 					<p class="preview_text"><small>I really want to find a way to take the first xx characters of a post and make a preview of it.</small></p>
 				</ul>
