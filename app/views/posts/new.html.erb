@@ -1,10 +1,8 @@
-
 <h1 class="form_header">Make a Post</h1>
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= form_for @post do |f| %>
-
       <% if @post.errors.any? %>
       <div class="error_messages">
         <h2>Error(s): </h2>
