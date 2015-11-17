@@ -1,6 +1,5 @@
 <!-- POST SHOW PAGE -->
 <div class="container">
-	<%= link_to 'All posts', posts_path %> <!-- CAN THIS GO IN THE NAVBAR? -->
 	<!-- HEADER -->
 	<div class="row">
 		<div id="userpic_on_post" class="col-sm-offset-2 col-sm-2">
@@ -13,7 +12,7 @@
 		        <%= @post.user.first_name %> <%= @post.user.last_name %>
 		      </a>
 		    </h4>
-		    <p><%= time_ago_in_words(@post.created_at)%> ago <em>at</em> <small>Dynamic Location</small><p>
+		    <p><%= time_ago_in_words(@post.created_at)%> ago <em>at</em> <small><%= @post.location_id %></small><p>
 		</div>
     </div>
     <div id="post_body" class="row">

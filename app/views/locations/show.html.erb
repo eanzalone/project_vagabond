@@ -4,19 +4,15 @@
    <h1 id="neighborhood-name"><%= @location[:name].upcase %></h1>
  </div>
 </div>
-
 <!-- Page Content -->
 <div class="container">
-
-  <!-- Neighborhood Navigation Area -->
-
   <!-- Posts Content -->
   <div class="row">
     <!-- Blog Entries Column -->
-    <div class="col-md-8">
-     <% @posts.each do |post| %>
-     <!-- First Blog Post -->
-     <h2>
+    <div class="col-sm-8">
+    <% @posts.each do |post| %>
+    <!-- First Blog Post -->
+    <h2>
       <a href="#"><%= link_to post.title, post_path(post) %></a>
     </h2>
     <p class="lead">
@@ -30,28 +26,26 @@
     <p><span class="glyphicon glyphicon-time"></span> <%= time_ago_in_words(post.created_at)%> ago</p>
     <hr>
     <p><%= post.body %></p>
-    <a class="btn btn-primary" href="<%= post_path(post)%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+    <hr class="end_post_segment">
     <% end %>
 
-    <hr>
-
     <!-- Pager -->
-    <ul class="pager">
+<!--     <ul class="pager">
       <li class="previous">
         <a href="#">&larr; Older</a>
       </li>
       <li class="next">
         <a href="#">Newer &rarr;</a>
       </li>
-    </ul>
+    </ul> -->
   </div>
   <!-- Blog Sidebar Widgets Column -->
-  <div class="col-md-4">
+  <div class="col-sm-4">
     <!-- Blog Categories Well -->
     <div class="well">
      <h4>Categories</h4>
      <div class="row">
-       <div class="col-lg-6">
+       <div class="col-sm-6">
          <ul class="list-unstyled">
            <li><a href="<%= tag_path(@location, 'Food') %>">Food</a>
            </li>
