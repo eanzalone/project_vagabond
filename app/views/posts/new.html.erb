@@ -10,7 +10,7 @@
           <%= f.text_area :body, placeholder: "Post Body", :class => 'form-control', :id => 'new_post_body' %>
         </div>
         <div>
-          <small><strong>Where did this take place?:</strong></small> <%= f.select :location, [['Bernal Heights'],['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Excelsior'],['Financial District'],['Glen Park'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Tenderloin']], {class: "form-control"} %>
+          <small><strong>Where did this take place?:</strong></small> <%= f.select :location, [['Castro'],['Chinatown'],['Dogpatch'],['Embarcadero'],['Financial District'],['Haight'],['Hayes Valley'],['Marina'],['Mission'],['Mission Bay'],['Nob Hill'],['Noe Valley'],['North Beach'],['Pacific Heights'],['Potrero Hill'],['Richmond'],['Russian Hill'],['Sunset'],['Tenderloin']], {class: "form-control"} %>
           <span class="pull-right"><small><strong>Category:</strong></small> <%= f.select :tag_list, [['Food'],['News'],['Music'],['Bars'],['Nightlife']], :class => 'form-control' %></span>
         </div>
         <%= f.submit "Make Post", :class => 'form-control btn-primary', :id => 'sub_new_post_btn' %>
