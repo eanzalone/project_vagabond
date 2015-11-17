@@ -1,56 +1,34 @@
-<!-- <div align="center">
-Don't have an account?
-<%= button_to "Sign Up", sign_up_path, :class => 'btn', :method => :get %>
-<%= button_to "Login", login_path, :class => 'btn', :method => :get %>
-</div> -->
-
-<div class="jumbotron" style= "background: url(<%= asset_url 'GGBridge' %>); background-position: center; background-size: 100%">
-  <h1>EVIL SF</h1>
-  <h3>Description of App</h3>
+<div id="homepg_jumbo" class="jumbotron" style= "background: url(<%= asset_url 'GGBridge' %>); background-position: center; background-size: 100%">
+  <h1><strong>HOOD</strong>SF</h1>
+  <h3>Keep up with your city.</h3>
 </div>
-
-<div>
-  <p>Space for tags</p>
-</div>
-
-<div>
-<% @posts.each do |post| %>
-        <h4><%= link_to post.title, post_path(post) %></h4>
-        <ul>
-          <p class="preview_text"><small>I really want to find a way to take the first xx characters of a post and make a preview of it.</small></p>
-        </ul>
-        <hr>
-      <% end %>
-</div>
-<!-- Neighborhood Name Splash -->
-<!-- <div class="jumbotron text-center">
-  <div class="container">
-   <h1>Neighborhood Name</h1>
+<div class="container">
+  <div class="col-sm-offset-4 col-sm-4" align="center">
+      <span class="label label-default">Castro</span>
+      <span class="label label-default">Chinatown</span>
+      <span class="label label-default">Dogpatch</span>
+      <span class="label label-default">Embarcadero</span>
+      <span class="label label-default">Financial District</span>
+      <span class="label label-default">Haight</span>
+      <span class="label label-default">Hayes Valley</span>
+      <span class="label label-default">Marina</span>
+      <span class="label label-default">Mission</span>
+      <span class="label label-default">Mission Bay</span>
+      <span class="label label-default">Nob Hill</span>
+      <span class="label label-default">Noe Valley</span>
+      <span class="label label-default">Richmond</span>
+      <span class="label label-default">Russian Hill</span>
+      <span class="label label-default">Sunset</span>
+      <span class="label label-default">Tenderloin</span>
+      <hr>
   </div>
-</div> -->
-
-<!-- Page Content -->
-<!-- <div class="container"> -->
-
-<!-- Neighborhood Navigation Area -->
-<!-- <div class="col-sm-12">
-		<div class="row">
-      <div class="col-md-5">
-          <a href="#">
-              <img class="img-responsive" src="http://placehold.it/200x200" alt="">
-          </a>
-      </div>
-      <div class="col-md-7">
-          <h3>Article Title</h3>
-          <h5>In: Food, Activities</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-          <a class="btn btn-primary" href="#">View Article <span class="glyphicon glyphicon-chevron-right"></span></a>
-      </div>
-  	</div>
-</div> --> <!--Post /.container -->
-
-
-
-
-<!-- </div> --> <!--Page /.container -->
-
+</div>
+<div class="container">
+  <div class="col-sm-offset-3 col-sm-6">
+    <% @posts.each do |post| %>
+      <h4><%= link_to post.title, post_path(post) %></h4>
+        <p class="preview_text"><small>I really want to find a way to take the first xx characters of a post and make a preview of it.</small></p>
+      <hr>
+    <% end %>
+  </div>
+</div>
