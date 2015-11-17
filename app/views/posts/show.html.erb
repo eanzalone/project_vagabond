@@ -44,8 +44,8 @@
 			<ul id="created_comments">
 				<% if @post.comments %>
 					<% @post.comments.each do |comment| %>
-						<p><%= @post.user[:last_name] %></p>
-						<p><%= comment.feedback %></p>
+						<h5>commented by: <%= comment.user[:first_name] %></h5>
+						<h4><%= comment.feedback %></h4>
 						<hr>
 				<% end %>
 				<% else %>
