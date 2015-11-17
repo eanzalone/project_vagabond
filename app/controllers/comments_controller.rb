@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
 			redirect_to @post
 		else
 			@post = Post.find(params[:post_id])
-			@user = User.find(params[:user_id])
 			render 'posts/show'
 		end
 	end

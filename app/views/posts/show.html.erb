@@ -13,7 +13,7 @@
 		        <%= @post.user.first_name %> <%= @post.user.last_name %>
 		      </a>
 		    </h4>
-		    <p><%= time_ago_in_words(@post.created_at)%> ago <em>at</em> <small>Dynamic Location</small><p>
+		    <p><%= time_ago_in_words(@post.created_at)%> ago <em>at</em> <small><%= @post.location[:name] %></small><p>
 		</div>
     </div>
     <div id="post_body" class="row">
@@ -46,6 +46,12 @@
 					<% @post.comments.each do |comment| %>
 						<h5>commented by: <%= comment.user[:first_name] %></h5>
 						<h4><%= comment.feedback %></h4>
+						<%= current_user.id == comment.user_id %>
+						<%= current_user.id.class %>
+						<%= comment.user_id.class %>
+						<% if current_user.id.to_i == comment.user_id.to_i %>
+							<%= button_to 'Delete comment', post_path(@post),{method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs pull-right'} %>
+						<% end %>
 						<hr>
 				<% end %>
 				<% else %>
