@@ -5,12 +5,17 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  get 'tags/:tag', to: 'posts#index', as: :tag
+  get '/locations/:id/tags/:tag', to: 'locations#show', as: :tag
 
   resources :users
+
   resources :posts do
-  	resources :comments
+    resources :comments
   end
-  resources :locations
+
+  resources :locations do
+    resources :posts
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 end

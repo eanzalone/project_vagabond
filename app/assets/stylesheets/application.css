@@ -13,16 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-
-.navbar,
-.navbar-header a,
-.navbar-nav .dropdown > a,
-.navbar li a,
-.navbar .nav li a:hover,
-.navbar-nav .dropdown-toggle:hover,
-.navbar-nav .open > a.dropdown-toggle:focus,
-.navbar-nav .dropdown-menu a:hover {
-  background-color: #286090;
-  color: white;
-}

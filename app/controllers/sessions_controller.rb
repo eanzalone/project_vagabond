@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 
   # create the session, logging in the user
   def create
+<<<<<<< HEAD
     # byebug
     user = User.find_by(email: user_params[:email])
     if user && user.authenticate(user_params[:password])
@@ -30,7 +31,13 @@ class SessionsController < ApplicationController
 
   private
 
+<<<<<<< HEAD
     def user_params
       params.require(:user).permit(:email, :password)
     end
+=======
+   def user_params
+     params.require(:user).permit(:email, :password)
+   end
+>>>>>>> master
 end
